@@ -1,16 +1,10 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -31,11 +25,11 @@ public class Main {
         }
         try{
             driver.findElement(By.xpath("//input[@name='q']")).sendKeys("boat blue");
-            List<WebElement> searchlist = driver.findElements(By.xpath("//ul[contains(@class,'col-12-12')]//li/div/a/div[2]"));
+            List<WebElement> searchList = driver.findElements(By.xpath("//ul[contains(@class,'col-12-12')]//li/div/a/div[2]"));
 
             Actions actions = new Actions(driver);
             Thread.sleep(1000);
-            actions.moveToElement(searchlist.get(searchlist.size()-1)).click().build().perform();
+            actions.moveToElement(searchList.get(searchList.size()-1)).click().build().perform();
 
             System.out.println("FAssured Earphones Information:");
             HashMap<String, String> model = new HashMap<>();
